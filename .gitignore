@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+examples/generated/
+cutout/
+.DS_Store

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" width="900" height="340" font-family="-apple-system,'Segoe UI','Microsoft YaHei',sans-serif">
+  <defs>
+    <linearGradient id="paperShadow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fffdf6"/>
+      <stop offset="70%" stop-color="#f7f2e6"/>
+      <stop offset="100%" stop-color="#e9e2d0"/>
+    </linearGradient>
+    <linearGradient id="vignette" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.10"/>
+    </linearGradient>
+    <pattern id="checker" width="16" height="16" patternUnits="userSpaceOnUse">
+      <rect width="16" height="16" fill="#ffffff"/>
+      <rect width="8" height="8" fill="#ececec"/>
+      <rect x="8" y="8" width="8" height="8" fill="#ececec"/>
+    </pattern>
+    <filter id="softBlur"><feGaussianBlur stdDeviation="1.1"/></filter>
+    <filter id="softBlur2"><feGaussianBlur stdDeviation="0.5"/></filter>
+    <!-- 一段示意用的手写笔迹（纯矢量原创，非真实签名） -->
+    <path id="scribble" d="M6,54 C16,20 30,4 39,9 C48,14 35,36 31,46 C27,56 34,58 44,50 C56,40 63,26 76,17 C85,11 93,14 90,25 C87,36 74,44 65,53"/>
+  </defs>
+
+  <rect width="900" height="340" rx="16" fill="#ffffff" stroke="#e6e8ec"/>
+  <text x="24" y="30" font-size="14" font-weight="600" fill="#1f2328">handwriting-cutout · 照片里的手写笔迹 → 透明底 PNG</text>
+  <text x="24" y="49" font-size="11.5" fill="#6b7280">thresholds are estimated per image — no per-image tuning</text>
+
+  <!-- 1 输入照片 -->
+  <text x="34" y="82" font-size="11.5" font-weight="600" fill="#57606a">1 · 手机拍摄的照片（有阴影、打光不匀）</text>
+  <rect x="34" y="92" width="200" height="150" rx="8" fill="url(#paperShadow)"/>
+  <rect x="34" y="92" width="200" height="150" rx="8" fill="url(#vignette)"/>
+  <use href="#scribble" transform="translate(78,128) scale(1.05) rotate(-5 60 30)" fill="none" stroke="#3a3a3c" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" filter="url(#softBlur)" opacity="0.95"/>
+  <rect x="34" y="92" width="200" height="150" rx="8" fill="none" stroke="#d8dde3"/>
+
+  <!-- arrow -->
+  <path d="M250,167 h26" stroke="#9aa4b2" stroke-width="2" fill="none"/>
+  <path d="M270,161 l8,6 l-8,6" stroke="#9aa4b2" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="243" y="200" font-size="10.5" fill="#8b949e">自动分析</text>
+
+  <!-- 2 抠出结果 -->
+  <text x="290" y="82" font-size="11.5" font-weight="600" fill="#57606a">2 · 抠出的透明底 PNG（无灰边、无阴影）</text>
+  <rect x="290" y="92" width="200" height="150" rx="8" fill="url(#checker)"/>
+  <use href="#scribble" transform="translate(334,128) scale(1.05) rotate(-5 60 30)" fill="none" stroke="#111111" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" filter="url(#softBlur2)"/>
+  <rect x="290" y="92" width="200" height="150" rx="8" fill="none" stroke="#d8dde3"/>
+  <text x="296" y="264" font-size="10" fill="#8b949e">棋盘格 = 透明区域</text>
+  <text x="296" y="279" font-size="10" fill="#8b949e">边缘干净：光照归一化 + S 曲线</text>
+
+  <!-- arrow -->
+  <path d="M506,167 h26" stroke="#9aa4b2" stroke-width="2" fill="none"/>
+  <path d="M526,161 l8,6 l-8,6" stroke="#9aa4b2" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="505" y="200" font-size="10.5" fill="#8b949e">插入</text>
+
+  <!-- 3 盖上文件 -->
+  <text x="546" y="82" font-size="11.5" font-weight="600" fill="#57606a">3 · 叠到 PDF / Word 上直接电子签</text>
+  <rect x="546" y="92" width="200" height="150" rx="8" fill="#ffffff" stroke="#d8dde3"/>
+  <rect x="562" y="106" width="120" height="7" rx="3.5" fill="#e8eaed"/>
+  <rect x="562" y="122" width="168" height="5" rx="2.5" fill="#eef0f2"/>
+  <rect x="562" y="134" width="150" height="5" rx="2.5" fill="#eef0f2"/>
+  <rect x="562" y="146" width="160" height="5" rx="2.5" fill="#eef0f2"/>
+  <rect x="562" y="158" width="120" height="5" rx="2.5" fill="#eef0f2"/>
+  <line x1="562" y1="212" x2="700" y2="212" stroke="#c9cdd4" stroke-width="1"/>
+  <use href="#scribble" transform="translate(600,178) scale(0.62) rotate(-4 60 30)" fill="none" stroke="#111111" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" filter="url(#softBlur2)"/>
+  <text x="562" y="226" font-size="9.5" fill="#8b949e">签字栏</text>
+
+  <!-- 底部特性 -->
+  <line x1="24" y1="300" x2="876" y2="300" stroke="#eef0f2"/>
+  <text x="34" y="322" font-size="11" fill="#57606a">自动处理：阴影/暗角 · 蓝红橙彩笔 · 深底浅字 · 浅铅笔低对比 · 模糊照片 · 多笔画多字符</text>
+  <text x="700" y="322" font-size="11" fill="#8b949e">MIT</text>
+</svg>
