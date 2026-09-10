@@ -8,11 +8,13 @@
 
 **阈值按每张图自动估计**——不同笔色、不同纸张、不同光照、不同清晰度都能直接跑，不用为换一张图去改参数。
 
-![示意图](examples/demo.svg)
-
-**真实输出**（6 种拍摄条件，全程未做任何手工调参；样例由 `scripts/gen_cases.py` 合成生成）：
+**真实输出**（6 种拍摄条件，全程未做任何手工调参；样例如图由 `scripts/gen_cases.py` 合成生成）：
 
 ![before / after](examples/before_after.png)
+
+工作流程示意：
+
+![示意图](examples/demo.svg)
 
 > Handwriting / signature cutout from photos → transparent PNG. Fully automatic thresholding, no per-image tuning. Designed as a [WorkBuddy / Claude-style agent skill](#作为-agent-skill-安装) and also usable as a plain CLI tool.
 
